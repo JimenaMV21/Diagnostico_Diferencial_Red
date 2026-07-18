@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e0fff9;
+  font-family: sans-serif;
+}
+/* --- Variables --- */
+
+ :root {
+  --verde: #a8ffc5;
+  --verdeFuerte: #1c5941;
+  --azul-fuerte: #1e3a8a;
+  --blanco: #ffffff;
+}
+
+body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
+
+.titulo-principal {
+  font-size: 2.5rem;  
+  color: #000000;      
+  text-align: center;  
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 150%;
+  height: 200%;
+  background-color: var(--azul-fuerte);
+  color: var(--verde);
+  z-index: 1000;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  font-size: 135%;
+}
+
+.sidebar.abierto { 
+  left: 0; 
+  color:var(--verdeFuerte);
+  display: block;
+  padding: 25px; 
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.boton-circular {
+  background-color: var(--verde);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 6px var(--verde);
+}
+
+.hamburguesa-btn { position: fixed; top: 20px; left: 20px; z-index: 999; }
+
+.btn-cerrar {
+  position: absolute;
+  top: 20px;
+  right: -25px;
+  z-index: 1005;
+}
+
+.sidebar nav ul { list-style: none; padding: 0; }
+
+.nav-item {
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.nav-item:hover { background: rgba(255, 255, 255, 0.15); }
+
+.main-content { padding: 80px 20px 20px 20px; }
+
+.contenedor-principal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--blanco);
+  border-radius: 12px;
+}
+
+.grid-sintomas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tarjeta-sintoma {
+  padding: 15px;
+  border: 1px solid #000000;
+  border-width: 0.05cm;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #bef3e8;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;     
+  justify-content: center;  
+  text-align: center;       
+  min-height: 80px;
+  word-wrap: break-word;
+  hyphens: auto;
+  color:#000000
+}
+
+.tarjeta-sintoma::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: var(--verdeFuerte);
+  transition: width 0.3s ease;
+}
+
+.tarjeta-sintoma:hover {
+  background-color: #46c2a1;
+}
+
+.tarjeta-sintoma.seleccionada {
+  border-color: var(--verde);
+}
+
+.tarjeta-sintoma.seleccionada::after {
+  width: 100%;
+}
+
+.menu-pestanas {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.boton-pestana {
+  padding: 10px 20px;
+  border: none;
+  background: var(--verde);
+  border-radius: 20px;
+  white-space: nowrap;
+  color: #000000;
+  font-size: 135%; /* Pestañas cambiar tamaño */
+  
+
+}
+
+.boton-pestana.activa {
+  background: var(--verdeFuerte);
+  color: rgb(245, 244, 244);
+}
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: var(--verde);
+  transition: 0.3s;
+  z-index: 1000;
+  padding-top: 60px;
+}
+
+.sidebar.abierto {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sidebar a:hover {
+  background-color: var(--verdeFuerte);
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: 0;
+  transition: 0.3s;
+}
+
+.form-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--verdeFuerte);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.custom-input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 2px solid var(--verdeFuerte);
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.custom-input:focus {
+  border-bottom: 2px solid var(--verde);
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Botón de Analizar */
+.boton-probar {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--verde), #0056b3);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px var(--verde);
+}
+
+.boton-probar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--verdeFuerte);
+}
+
+/* Caja de Resultado */
+.resultado-box {
+  margin-top: 25px;
+  padding: 25px;
+  background: #b2ddcd;
+  border: 1px solid var(--verde);
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.resultado-box h3 {
+  color: var(--verdeFuerte);
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.grid-colaboradores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta-colaborador {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid var(--verde);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-colaborador:hover {
+  transform: translateY(-5px);
+}
+
+.nombre-colaborador {
+  color: var(--verdeFuerte);
+  margin: 0 0 10px 0;
+  word-wrap: break-word;
+}
+
+.especialidad-colaborador {
+  color: #555;
+  font-style: italic;
+  margin: 0;
+}
+
+.titulo-principal {
+  text-align: center;      /* Centrado */
+  color: var(--verdeFuerte);          /* Un azul oscuro profesional */
+  font-size: 2rem;         /* Tamaño grande pero legible */
+  line-height: 1.2;        /* Espaciado entre líneas para que no se peguen */
+  margin: 0 auto 30px auto;/* Centra el elemento y separa del contenido */
+  max-width: 800px;        /* Evita que el texto sea interminablemente ancho */
+  padding: 0 20px;         /* Espacio lateral para pantallas móviles */
+  font-weight: 700;
+}
+
+/* Animación simple */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .grid-sintomas { grid-template-columns: 1fr; }
+} 
