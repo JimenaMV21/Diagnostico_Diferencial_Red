@@ -135,7 +135,9 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 }
 
 .tarjeta-sintoma.seleccionada {
-  border-color: var(--verde);
+  border-color: #000000 ;
+  background-color: var(--verdeFuerte);
+  color: #ffffff;
 }
 
 .tarjeta-sintoma.seleccionada::after {
@@ -314,14 +316,21 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 }
 
 .titulo-principal {
-  text-align: center;      /* Centrado */
-  color: var(--verdeFuerte);          /* Un azul oscuro profesional */
-  font-size: 2rem;         /* Tamaño grande pero legible */
-  line-height: 1.2;        /* Espaciado entre líneas para que no se peguen */
-  margin: 0 auto 30px auto;/* Centra el elemento y separa del contenido */
-  max-width: 800px;        /* Evita que el texto sea interminablemente ancho */
-  padding: 0 20px;         /* Espacio lateral para pantallas móviles */
+  text-align: center;
+  color: var(--verdeFuerte);
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 auto 30px auto;
+  max-width: 800px;        
+  padding: 0 20px;
   font-weight: 700;
+}
+
+.contenedor-prueba {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Esto separará todos los bloques verticalmente */
+  padding: 20px;
 }
 
 /* Animación simple */
