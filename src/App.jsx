@@ -8,7 +8,7 @@ import Disclaimer from './Disclaimer';
 // importacion imagenes
 import logoTec from './Imagenes/logo-Tec.jpeg';
 import logoTecT from './Imagenes/logo-TecT.jpeg';
-import logoCecyte from './Imagenes/logo-Cecyte.jpeg';
+import logoCecyte from './Imagenes/Logo-Cecyte.jpeg';
 import logoUao from './Imagenes/logo-uao.jpg';
 import logoUabjo from './Imagenes/logo-Uabjo.jpeg';
 
