@@ -36,7 +36,7 @@ export default function TestModel() {
 
   return (
     <div className="contenedor-prueba">
-      <h2 className="titulo-principal">Diagnóstico diferencial entre Dengue, Chikungunya y Zika</h2>
+      <h2 className="titulo-principal">Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika</h2>
 
       <p className="mensaje-box3" style={{ padding: '20px', borderRadius: '15px', color: '#040404', fontSize: '1rem' }}>
         <strong> Instructivo: </strong> Para obtener un análisis preciso, selecciona al menos 5 síntomas observados durante la fase inicial (primeros 5 días tras su 
@@ -84,7 +84,7 @@ export default function TestModel() {
       <span key={sintoma} style={{ 
         background: '#22c55e', 
         color: 'white', 
-        padding: '5px 12px', 
+        padding: '5px 12px',
         borderRadius: '20px', 
         fontSize: '0.85rem' 
       }}>
