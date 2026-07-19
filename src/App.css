@@ -339,8 +339,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin: 30px 0;
+  gap: 50px;          /* Reducimos un poco el gap para que quepan mejor */
+  margin: 30px 0;      
+  flex-wrap: wrap;    /* ESTO ES CLAVE: permite que los logos salten a la siguiente línea si no caben */
+  padding: 0 10px;    /* Un pequeño respiro para que no peguen con los bordes */
 }
 
 .logo-universidad {
@@ -354,7 +356,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .logo-base {
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain; /* Cambiado a contain para que el logo entero quepa en el círculo */
   border: 2px solid #ddd;
   background-color: white;
 }
