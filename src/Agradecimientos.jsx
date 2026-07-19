@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Es VITAL el "export default" para que App.jsx lo pueda leer
+
 export default function Agradecimientos({ setPagina }) {
   return (
     <div className="contenedor-principal" style={{ textAlign: 'center', marginTop: '50px' }}>
@@ -35,6 +35,10 @@ export default function Agradecimientos({ setPagina }) {
       >
         Volver al Inicio
       </button>
+
+    
+
     </div>
+
   );
 }

@@ -4,6 +4,14 @@ import Agradecimientos from './Agradecimientos';
 import Colaborador from './Colaborador';
 import Introduccion from './Introduccion';
 import Disclaimer from './Disclaimer';
+
+// importacion imagenes
+import logoTec from './Imagenes/logo-Tec.jpeg';
+import logoTecT from './Imagenes/logo-TecT.jpeg';
+import logoCecyte from './Imagenes/logo-Cecyte.jpeg';
+import logoUao from './Imagenes/logo-uao.jpg';
+import logoUabjo from './Imagenes/logo-Uabjo.jpeg';
+
 import './App.css';
 
 function App() {
@@ -55,9 +63,19 @@ function App() {
       <Colaborador nombre="Socorro Pina Canseco" especialidad="UABJO" />
       <Colaborador nombre="Jimena Morales Villagómez" especialidad="UAO" />
       <Colaborador nombre="Eduardo Alberto Mayoral Pérez Campos" especialidad="UAO" />
-
     </div>
+
+    {/* logos */}
+    <div className="contenedor-logos">
+  <img src={logoUabjo} alt="Universidad-Autonoma-Oaxaca" className="logo-base logo-pequeno" />
+  <img src={logoTecT} alt="Universidad-Tec-Tijuna" className="logo-base logo-pequeno" />
+  <img src={logoTec} alt="Universidad-Tec-Oaxaca" className="logo-base logo-grande" />
+  <img src={logoCecyte} alt="Colegio-Cecyte" className="logo-base logo-pequeno" />
+  <img src={logoUao} alt="Universidad-Anahuac-Oaxaca" className="logo-base logo-pequeno" />
+</div>
+
   </div>
+  
 )}
         
         {pagina === 'Agradecimientos' && <Agradecimientos setPagina={setPagina} />}

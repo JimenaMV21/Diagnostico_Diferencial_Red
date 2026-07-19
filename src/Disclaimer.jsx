@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function Disclaimer() {
   return (
     <footer style={{ marginTop: '40px', borderTop: '1px solid #dee2e6', backgroundColor: '#f8f9fa' }}>

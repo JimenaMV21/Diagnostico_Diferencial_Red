@@ -329,8 +329,44 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .contenedor-prueba {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Esto separará todos los bloques verticalmente */
+  gap: 15px;
   padding: 20px;
+}
+
+/* Logos */
+
+.contenedor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+.logo-universidad {
+  width: 135px;        
+  height: 135px;       
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  background-color: white;
+}
+
+.logo-base {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  background-color: white;
+}
+
+.logo-pequeno {
+  width: 90px;
+  height: 90px;
+}
+
+.logo-grande {
+  width: 150px;
+  height: 150px;
 }
 
 /* Animación simple */
@@ -341,4 +377,4 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 @media (max-width: 768px) {
   .grid-sintomas { grid-template-columns: 1fr; }
-} 
+}
