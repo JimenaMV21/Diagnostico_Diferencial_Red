@@ -38,7 +38,7 @@ export default function TestModel() {
     <div className="contenedor-prueba">
       <h2 className="titulo-principal">Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika</h2>
 
-      <p className="mensaje-box3" style={{ padding: '20px', borderRadius: '15px', color: '#040404', fontSize: '1rem' }}>
+      <p className="mensaje-box3" style={{ padding: '20px', borderRadius: '15px', color: '#040404', fontSize: '1rem',maxWidth:'800px',width: '90%',textAlign: 'justify' }}>
         <strong> Instructivo: </strong> Para obtener un análisis preciso, selecciona al menos 5 síntomas observados durante la fase inicial (primeros 5 días tras su 
         aparición). Al completar tu selección, pulsa el botón 'Analizar Enfermedad' para que nuestro modelo de investigación procese los datos y genere una estimación 
         basada en patrones predefinidos
