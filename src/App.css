@@ -337,12 +337,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .contenedor-logos {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;          /* Reducimos un poco el gap para que quepan mejor */
-  margin: 30px 0;      
-  flex-wrap: wrap;    /* ESTO ES CLAVE: permite que los logos salten a la siguiente línea si no caben */
-  padding: 0 10px;    /* Un pequeño respiro para que no peguen con los bordes */
+  flex-direction: row; /* Los pone en fila horizontal */
+  flex-wrap: wrap;     /* Permite que bajen de renglón si no caben */
+  justify-content: center; /* Centra los elementos */
+  gap: 20px;           /* Espacio entre ellos */
 }
 
 .logo-universidad {
@@ -357,8 +355,6 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .logo-base {
   border-radius: 50%;
   object-fit: contain; /* Cambiado a contain para que el logo entero quepa en el círculo */
-  border: 2px solid #ddd;
-  background-color: white;
 }
 
 .logo-pequeno {
@@ -369,6 +365,8 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .logo-grande {
   width: 175px;
   height: 175px;
+  flex: 0 0 100%;      /* Fuerza al grande a ocupar el 100% de la fila */
+  text-align: center;
 }
 
 /* Animación simple */

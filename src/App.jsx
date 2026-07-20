@@ -11,6 +11,7 @@ import logoTecT from './Imagenes/logo-TecT.jpeg';
 import logoSecihti from './Imagenes/logo-Seci.jpg';
 import logoUao from './Imagenes/logo-uao.jpg';
 import logoUabjo from './Imagenes/logo-Uabjo.jpeg';
+import logoTecM from './Imagenes/logo-TecM.png';
 
 import './App.css';
 
@@ -67,11 +68,13 @@ function App() {
 
     {/* logos */}
     <div className="contenedor-logos">
-  <img src={logoUabjo} alt="Universidad-Autonoma-Oaxaca" className="logo-base logo-pequeno" />
-  <img src={logoTecT} alt="Universidad-Tec-Tijuna" className="logo-base logo-pequeno" />
-  <img src={logoTec} alt="Universidad-Tec-Oaxaca" className="logo-base logo-grande" />
-  <img src={logoSecihti} alt="Secretaria-Secihti" className="logo-base logo-pequeno" />
-  <img src={logoUao} alt="Universidad-Anahuac-Oaxaca" className="logo-base logo-pequeno" />
+      <img src={logoTecM} alt="Universidad-Tec-Mexico" className="logo-base logo-grande" />      
+      <img src={logoUabjo} alt="Universidad-Autonoma-Oaxaca" className="logo-base logo-pequeno" />
+      <img src={logoTecT} alt="Universidad-Tec-Tijuna" className="logo-base logo-pequeno" />
+      <img src={logoSecihti} alt="Secretaria-Secihti" className="logo-base logo-pequeno" />
+      <img src={logoUao} alt="Universidad-Anahuac-Oaxaca" className="logo-base logo-pequeno" />
+      <img src={logoTec} alt="Universidad-Tec-Oaxaca" className="logo-base logo-pequeno" />
+  
 </div>
 
   </div>
