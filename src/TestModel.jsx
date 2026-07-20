@@ -102,9 +102,33 @@ export default function TestModel() {
         Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika
       </h2>
 
-      <p className="mensaje-box3" style={{ padding: '15px', borderRadius: '15px', color: '#040404', fontSize: '0.95rem', maxWidth:'800px', width: '100%', textAlign: 'justify', margin: '10px 0 20px 0', boxSizing: 'border-box' }}>
-        <strong>Instructivo: </strong> Para obtener un análisis preciso, ingresa tus datos generales y clínicos, selecciona al menos 5 síntomas observados durante la fase inicial y pulsa el botón 'Analizar Enfermedad'.
-      </p>
+      <div className="mensaje-box3" style={{ 
+    backgroundColor: '#dcffe1', 
+    border: '1px solid #e9ecef',
+    borderLeft: '4px solid #93dfa5', 
+    padding: '20px 24px', 
+    borderRadius: '12px', 
+    color: '#333333', 
+    fontSize: '0.95rem', 
+    maxWidth: '800px', 
+    width: '100%', 
+    textAlign: 'left', 
+    margin: '10px 0 20px 0', 
+    boxSizing: 'border-box',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.02)'
+}}>
+    <strong style={{ display: 'block', marginBottom: '10px', fontSize: '1rem', color: '#52b485' }}>
+        Instructivo:
+    </strong>
+    <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.6' }}>
+        <li>Ingresa tus datos demográficos y clínicos generales.</li>
+        <li>Selecciona al menos 5 síntomas presentes en tu fase inicial.</li>
+        <li>Haz clic en <strong>"Analizar Enfermedad"</strong> para procesar la predicción mediante el modelo.</li>
+        <li>Los datos se registrarán automáticamente para futuras consultas de investigación.</li>
+    </ul>
+</div>
+
+<br />
 
       <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '8px', boxSizing: 'border-box', padding: '0 5px' }}>
         <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b', borderBottom: '2px solid #2f7a56', paddingBottom: '8px' }}>
@@ -194,8 +218,14 @@ export default function TestModel() {
         </div>
       </div>
 
+      <br />
+
       <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '10px', boxSizing: 'border-box', padding: '0 5px' }}>
-        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b' }}>2. Selección de Síntomas</h3>
+        
+        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b', borderBottom: '2px solid #2f7a56', paddingBottom: '8px' }}>
+          2. Selección de Síntomas
+        </h3>
+      
       </div>
 
       <div className="menu-pestanas" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px', width: '100%', maxWidth: '800px', boxSizing: 'border-box' }}>
