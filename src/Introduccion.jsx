@@ -3,7 +3,7 @@ import React from 'react';
 export default function Introduccion() {
   return (
     <div className="contenedor-principal">
-      <h1 className="titulo-principal">Bienvenido al Diagnóstico diferencial entre Dengue, Chikungunya y Zika</h1>
+      <h1 className="titulo-principal">Bienvenido al Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika</h1>
 
       <br />
       
