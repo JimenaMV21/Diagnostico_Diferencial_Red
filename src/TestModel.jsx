@@ -4,6 +4,12 @@ import { predecirEnfermedad } from './model';
 import './App.css';
 
 export default function TestModel() {
+  const [edad, setEdad] = useState('');
+  const [estadoOrigen, setEstadoOrigen] = useState('');
+  const [genero, setGenero] = useState('');
+  const [viajeReciente, setViajeReciente] = useState('');
+  const [diasSintomas, setDiasSintomas] = useState('');
+
   const [selecciones, setSelecciones] = useState({});
   const [categoriaActiva, setCategoriaActiva] = useState(gruposSintomas[0]);
   const [resultado, setResultado] = useState("");
@@ -17,16 +23,30 @@ export default function TestModel() {
   };
 
   const ejecutarPrediccion = async () => {
-    const marcados = Object.values(selecciones).filter(Boolean).length;
-    console.log("Síntomas marcados:", marcados);
+    if (!edad || !estadoOrigen || !genero || !viajeReciente || !diasSintomas) {
+      setMensajeError("Por favor, completa todas las preguntas de la sección de información general.");
+      setTimeout(() => setMensajeError(""), 3500);
+      return;
+    }
 
+    const marcados = Object.values(selecciones).filter(Boolean).length;
     if (marcados < 5) {
       setMensajeError("Por favor, selecciona al menos 5 síntomas.");
       setTimeout(() => setMensajeError(""), 3000);
       return; 
     }
 
-    // Si pasa la validación:
+    const datosParaBaseDeDatos = {
+      edad: parseInt(edad),
+      estado: estadoOrigen,
+      genero: genero,
+      viajeReciente: viajeReciente,
+      diasSintomas: diasSintomas,
+      sintomasSeleccionados: selecciones,
+      fechaRegistro: new Date().toISOString()
+    };
+    console.log("Datos listos para guardar en BD:", datosParaBaseDeDatos);
+
     const listaCompleta = gruposSintomas.flatMap(g => g.items);
     const arrayParaModelo = listaCompleta.map(sintoma => selecciones[sintoma] ? 1 : 0);
     
@@ -34,17 +54,151 @@ export default function TestModel() {
     setResultado(res);
   };
 
-  return (
-    <div className="contenedor-prueba">
-      <h2 className="titulo-principal">Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika</h2>
+  const estadosDeMexico = [
+    "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", 
+    "Chihuahua", "Ciudad de México", "Coahuila", "Colima", "Durango", "Estado de México", 
+    "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", 
+    "Nuevo León", "Oaxaca", "Puebla", "Querétaro", "Quintana Roo", "San Luis Potosí", 
+    "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas"
+  ];
 
-      <p className="mensaje-box3" style={{ padding: '20px', borderRadius: '15px', color: '#040404', fontSize: '1rem',maxWidth:'800px',width: '90%',textAlign: 'justify' }}>
-        <strong> Instructivo: </strong> Para obtener un análisis preciso, selecciona al menos 5 síntomas observados durante la fase inicial (primeros 5 días tras su 
-        aparición). Al completar tu selección, pulsa el botón 'Analizar Enfermedad' para que nuestro modelo de investigación procese los datos y genere una estimación 
-        basada en patrones predefinidos
+  const estiloCampoFormulario = {
+    width: '100%',
+    padding: '12px 15px',
+    borderRadius: '10px',
+    border: '1px solid #cbd5e1',
+    fontSize: '1rem',
+    background: '#ffffff',
+    color: '#1e293b',
+    boxSizing: 'border-box',
+    outline: 'none',
+    cursor: 'pointer'
+  };
+
+  return (
+    <div style={{ width: '100%', maxWidth: '100vw', boxSizing: 'border-box', overflowX: 'hidden', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px' }}>
+      <style>{`
+        html, body {
+          max-width: 100%;
+          overflow-x: hidden !important;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        *, *:before, *:after {
+          box-sizing: inherit;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+      `}</style>
+
+      <h2 className="titulo-principal" style={{ textAlign: 'center', width: '100%', fontSize: '2.2rem', boxSizing: 'border-box', padding: '0 10px' }}>
+        Diagnóstico diferencial entre Influenza, Dengue, Chikungunya y Zika
+      </h2>
+
+      <p className="mensaje-box3" style={{ padding: '15px', borderRadius: '15px', color: '#040404', fontSize: '0.95rem', maxWidth:'800px', width: '100%', textAlign: 'justify', margin: '10px 0 20px 0', boxSizing: 'border-box' }}>
+        <strong>Instructivo: </strong> Para obtener un análisis preciso, ingresa tus datos generales y clínicos, selecciona al menos 5 síntomas observados durante la fase inicial y pulsa el botón 'Analizar Enfermedad'.
       </p>
 
-      <div className="menu-pestanas">
+      <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '8px', boxSizing: 'border-box', padding: '0 5px' }}>
+        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b', borderBottom: '2px solid #2f7a56', paddingBottom: '8px' }}>
+          1. Información General y Antecedentes
+        </h3>
+      </div>
+
+      <div style={{ 
+        maxWidth: '800px', 
+        width: '100%', 
+        background: '#b2ddcd', 
+        padding: '15px', 
+        borderRadius: '15px', 
+        border: '1px solid #e2e8f0', 
+        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+        marginBottom: '20px',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', width: '100%', boxSizing: 'border-box' }}>
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', marginBottom: '5px', fontSize: '0.9rem', color: '#475569' }}>Edad:</label>
+            <input 
+              type="number" 
+              min="1" 
+              max="120"
+              placeholder="Ej. 25" 
+              value={edad} 
+              onChange={(e) => setEdad(e.target.value)}
+              style={estiloCampoFormulario}
+            />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', marginBottom: '5px', fontSize: '0.9rem', color: '#475569' }}>Género:</label>
+            <select 
+              value={genero} 
+              onChange={(e) => setGenero(e.target.value)}
+              style={estiloCampoFormulario}
+            >
+              <option value="">Selecciona género...</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro / Prefiero no decirlo</option>
+            </select>
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', marginBottom: '5px', fontSize: '0.9rem', color: '#475569' }}>Estado de Procedencia:</label>
+            <select 
+              value={estadoOrigen} 
+              onChange={(e) => setEstadoOrigen(e.target.value)}
+              style={estiloCampoFormulario}
+            >
+              <option value="">Selecciona tu estado...</option>
+              {estadosDeMexico.map((est) => (
+                <option key={est} value={est}>{est}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', marginBottom: '5px', fontSize: '0.9rem', color: '#475569' }}>¿Viaje reciente (últimas 2 sem)?</label>
+            <select 
+              value={viajeReciente} 
+              onChange={(e) => setViajeReciente(e.target.value)}
+              style={estiloCampoFormulario}
+            >
+              <option value="">Selecciona una opción...</option>
+              <option value="Si">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', marginBottom: '5px', fontSize: '0.9rem', color: '#475569' }}>¿Cuántos días llevas con los síntomas?</label>
+            <select 
+              value={diasSintomas} 
+              onChange={(e) => setDiasSintomas(e.target.value)}
+              style={estiloCampoFormulario}
+            >
+              <option value="">Selecciona el rango de días...</option>
+              <option value="1-3 dias">De 1 a 3 días (Fase muy temprana)</option>
+              <option value="4-5 dias">De 4 a 5 días (Fase inicial clave)</option>
+              <option value="Mas de 5 dias">Más de 5 días</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '10px', boxSizing: 'border-box', padding: '0 5px' }}>
+        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b' }}>2. Selección de Síntomas</h3>
+      </div>
+
+      <div className="menu-pestanas" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '8px', width: '100%', maxWidth: '800px', boxSizing: 'border-box' }}>
         {gruposSintomas.map((grupo) => (
           <button 
             key={grupo.titulo}
@@ -56,7 +210,7 @@ export default function TestModel() {
         ))}
       </div>
 
-      <div className="grid-sintomas">
+      <div className="grid-sintomas" style={{ maxWidth: '800px', width: '100%', boxSizing: 'border-box' }}>
         {categoriaActiva.items.map((sintoma) => (
           <div 
             key={sintoma} 
@@ -68,34 +222,35 @@ export default function TestModel() {
         ))}
       </div>
 
-      {/* Box de Seleccion */}
-      {/* Sección de visualización de síntomas */}
-<div className="sintomas-seleccionados-box" style={{ 
-  marginTop: '20px', 
-  marginBottom: '20px', 
-  padding: '15px', 
-  background: '#f0fdf4', 
-  borderRadius: '10px', 
-  border: '1px solid #bbf7d0' 
-}}>
-  <p style={{ margin: '0 0 10px 0', fontWeight: 'bold' }}>Síntomas seleccionados:</p>
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-    {Object.keys(selecciones).filter(s => selecciones[s]).map(sintoma => (
-      <span key={sintoma} style={{ 
-        background: '#22c55e', 
-        color: 'white', 
-        padding: '5px 12px',
-        borderRadius: '20px', 
-        fontSize: '0.85rem' 
+      <div className="sintomas-seleccionados-box" style={{ 
+        marginTop: '20px', 
+        marginBottom: '20px', 
+        padding: '15px', 
+        background: '#f0fdf4', 
+        borderRadius: '10px', 
+        border: '1px solid #bbf7d0',
+        maxWidth: '800px',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
-        {sintoma}
-      </span>
-    ))}
-    {Object.values(selecciones).filter(Boolean).length === 0 && (
-      <span style={{ color: '#666', fontStyle: 'italic' }}>Ningún Síntoma Seleccionado</span>
-    )}
-  </div>
-</div>
+        <p style={{ margin: '0 0 10px 0', fontWeight: 'bold' }}>Síntomas seleccionados:</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          {Object.keys(selecciones).filter(s => selecciones[s]).map(sintoma => (
+            <span key={sintoma} style={{ 
+              background: '#22c55e', 
+              color: 'white', 
+              padding: '5px 12px',
+              borderRadius: '20px', 
+              fontSize: '0.85rem' 
+            }}>
+              {sintoma}
+            </span>
+          ))}
+          {Object.values(selecciones).filter(Boolean).length === 0 && (
+            <span style={{ color: '#666', fontStyle: 'italic' }}>Ningún Síntoma Seleccionado</span>
+          )}
+        </div>
+      </div>
 
       <button 
         onClick={ejecutarPrediccion} 
@@ -107,24 +262,28 @@ export default function TestModel() {
       {mensajeError && (
         <div style={{
           position: 'fixed',
-          bottom: '50px',
+          bottom: '30px',
           left: '50%',
           transform: 'translateX(-50%)',
           backgroundColor: '#dc3545',
           color: 'white',
-          padding: '20px 30px',
+          padding: '15px 20px',
           borderRadius: '50px',
           boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
           zIndex: 9999,
           fontWeight: 'bold',
-          fontSize: '1.1rem'
+          fontSize: '1rem',
+          textAlign: 'center',
+          width: '90%',
+          maxWidth: '400px',
+          boxSizing: 'border-box'
         }}>
           {mensajeError}
         </div>
       )}
 
       {resultado && (
-        <div className="resultado-box">
+        <div className="resultado-box" style={{ maxWidth: '800px', width: '100%', boxSizing: 'border-box', textAlign: 'center' }}>
           <p style={{ margin: 0, color: '#555' }}>Diagnóstico:</p>
           <h3 style={{ marginTop: '5px' }}>{resultado}</h3>
         </div>
