@@ -3,6 +3,8 @@ import { gruposSintomas } from './sintomasConfig';
 import { predecirEnfermedad } from './model';
 import './App.css';
 
+import { supabase } from './supabaseClient';
+
 export default function TestModel() {
   const [edad, setEdad] = useState('');
   const [estadoOrigen, setEstadoOrigen] = useState('');
@@ -36,22 +38,38 @@ export default function TestModel() {
       return; 
     }
 
-    const datosParaBaseDeDatos = {
-      edad: parseInt(edad),
-      estado: estadoOrigen,
-      genero: genero,
-      viajeReciente: viajeReciente,
-      diasSintomas: diasSintomas,
-      sintomasSeleccionados: selecciones,
-      fechaRegistro: new Date().toISOString()
-    };
-    console.log("Datos listos para guardar en BD:", datosParaBaseDeDatos);
-
     const listaCompleta = gruposSintomas.flatMap(g => g.items);
     const arrayParaModelo = listaCompleta.map(sintoma => selecciones[sintoma] ? 1 : 0);
     
+    // 1. Obtenemos la predicción de tu modelo de MATLAB
     const res = await predecirEnfermedad(arrayParaModelo);
     setResultado(res);
+
+    // 2. Preparamos el objeto exacto para la base de datos de Supabase
+    const nuevoRegistro = {
+      edad: parseInt(edad),
+      genero: genero,
+      estado: estadoOrigen,
+      viaje_reciente: viajeReciente,
+      dias_sintomas: diasSintomas,
+      sintomas: selecciones,
+      resultado_diagnostico: res
+    };
+
+    // 3. Insertamos los datos en la tabla de Supabase de forma asíncrona
+    try {
+      const { error } = await supabase
+        .from('registros_clinicos')
+        .insert([nuevoRegistro]);
+
+      if (error) {
+        console.error("Error al guardar en Supabase:", error.message);
+      } else {
+        console.log("¡Registro guardado exitosamente en la base de datos!");
+      }
+    } catch (err) {
+      console.error("Error de conexión:", err);
+    }
   };
 
   const estadosDeMexico = [
