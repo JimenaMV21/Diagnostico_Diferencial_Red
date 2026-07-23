@@ -43,6 +43,7 @@ function App() {
         {pagina === 'Prueba' && <TestModel />}
 
         {pagina === 'Colaboradores' && (
+          
   <div className="contenedor-principal">
     <h1 className="titulo-principal">Colaboradores</h1>
     
