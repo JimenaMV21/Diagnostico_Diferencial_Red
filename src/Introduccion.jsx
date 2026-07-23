@@ -202,7 +202,7 @@ export default function Introduccion() {
             controls 
             style={{ width: '100%', maxHeight: '450px', borderRadius: '12px', display: 'block' }}
           >
-            <source src={VideoIA} type="video/mp4" />
+            <source src={videoIA} type="video/mp4" />
             Tu navegador no soporta la reproducción de video.
           </video>
         </div>
