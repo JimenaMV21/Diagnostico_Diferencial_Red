@@ -12,6 +12,7 @@ import logoSecihti from './Imagenes/logo-Seci.jpg';
 import logoUao from './Imagenes/logo-uao.jpg';
 import logoUabjo from './Imagenes/logo-Uabjo.jpeg';
 import logoTecM from './Imagenes/logo-TecM.png';
+import Arbodx from './Imagenes/Arbodx.png';
 
 import './App.css';
 
@@ -34,6 +35,10 @@ function App() {
           <a onClick={() => { setPagina('Colaboradores'); setAbierto(false); }}>Colaboradores</a>
           <a onClick={() => { setPagina('Agradecimientos'); setAbierto(false); }}>Agradecimientos</a>
         </div>
+
+        <div className="sidebar-footer">
+    <img src={Arbodx} alt="ArboDx - IA Logo" className="logo-sidebar" />
+  </div>
       </nav>
 
       {/* Contenido dinámico */}
@@ -43,7 +48,7 @@ function App() {
         {pagina === 'Prueba' && <TestModel />}
 
         {pagina === 'Colaboradores' && (
-          
+
   <div className="contenedor-principal">
     <h1 className="titulo-principal">Colaboradores</h1>
     
