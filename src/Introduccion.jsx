@@ -1,5 +1,5 @@
 import React from 'react';
-import videoIA from './Imagenes/videoIA.mp4'; // <--- 1. Aquí está importado correctamente
+import videoIA from './Imagenes/VideoIA.mp4';
 
 export default function Introduccion() {
   return (
@@ -202,7 +202,7 @@ export default function Introduccion() {
             controls 
             style={{ width: '100%', maxHeight: '450px', borderRadius: '12px', display: 'block' }}
           >
-            <source src={videoIA} type="video/mp4" />
+            <source src={VideoIA} type="video/mp4" />
             Tu navegador no soporta la reproducción de video.
           </video>
         </div>
