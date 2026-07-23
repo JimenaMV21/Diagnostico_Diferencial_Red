@@ -1,13 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #e0fff9;
-  font-family: sans-serif;
+  background-color: #061C36;
+  font-family: 'Poppins', 'Inter', sans-serif;
 }
 /* --- Variables --- */
 
  :root {
-  --verde: #a8ffc5;
+  --verde: #a8ffc5; 
   --verdeFuerte: #1c5941;
   --azul-fuerte: #1e3a8a;
   --blanco: #ffffff;
@@ -17,7 +17,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .titulo-principal {
   font-size: 2.5rem;  
-  color: #000000;      
+  color: #ffffff;      
   text-align: center;  
 }
 
@@ -27,8 +27,8 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   left: -280px;
   width: 150%;
   height: 200%;
-  background-color: var(--azul-fuerte);
-  color: var(--verde);
+  background-color: #06294B;
+  color: #06294B;
   z-index: 1000;
   transition: 0.3s;
   display: flex;
@@ -39,10 +39,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .sidebar.abierto { 
   left: 0; 
-  color:var(--verdeFuerte);
+  color:#06294B;
   display: block;
   padding: 25px; 
-  color: rgb(0, 0, 0);
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -88,7 +88,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background: var(--blanco);
+  background: #06294B;
   border-radius: 12px;
 }
 
@@ -101,12 +101,12 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .tarjeta-sintoma {
   padding: 15px;
-  border: 1px solid #000000;
+  border: 1px solid #04024f;
   border-width: 0.05cm;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background-color: #bef3e8;
+  background-color: #06294B;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -116,7 +116,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   min-height: 80px;
   word-wrap: break-word;
   hyphens: auto;
-  color:#000000
+  color: #ffffff;
 }
 
 .tarjeta-sintoma::after {
@@ -126,17 +126,17 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   left: 0;
   width: 0;
   height: 4px;
-  background-color: var(--verdeFuerte);
+  background-color: #00C3D7;
   transition: width 0.3s ease;
 }
 
 .tarjeta-sintoma:hover {
-  background-color: #46c2a1;
+  background-color: #00C3D7;
 }
 
 .tarjeta-sintoma.seleccionada {
   border-color: #000000 ;
-  background-color: var(--verdeFuerte);
+  background-color: #00C3D7;
   color: #ffffff;
 }
 
@@ -154,17 +154,16 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .boton-pestana {
   padding: 10px 20px;
   border: none;
-  background: var(--verde);
+  background: #06294B;
   border-radius: 20px;
   white-space: nowrap;
-  color: #000000;
-  font-size: 135%; /* Pestañas cambiar tamaño */
-  
-
+  color: #ffffff;
+  font-size: 135%;
+  border-color: #00C3D7;
 }
 
 .boton-pestana.activa {
-  background: var(--verdeFuerte);
+  background: #00C3D7;
   color: rgb(245, 244, 244);
 }
 
@@ -179,7 +178,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color: var(--verde);
+  background-color: #06294B;
   transition: 0.3s;
   z-index: 1000;
   padding-top: 60px;
@@ -192,13 +191,13 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .sidebar a {
   display: block;
   padding: 15px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   cursor: pointer;
 }
 
 .sidebar a:hover {
-  background-color: var(--verdeFuerte);
+  background-color: #00C3D7;
 }
 
 .main-content {
@@ -208,10 +207,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 }
 
 .form-card {
-  background: #ffffff;
+  background: #04024f;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px var(--verdeFuerte);
+  box-shadow: 0 4px 12px #ffffff;
   max-width: 400px;
   margin: 0 auto;
 }
@@ -225,20 +224,20 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   width: 100%;
   padding: 10px 0;
   border: none;
-  border-bottom: 2px solid var(--verdeFuerte);
+  border-bottom: 2px solid #06294B;
   outline: none;
   transition: 0.3s;
   font-size: 16px;
 }
 
 .custom-input:focus {
-  border-bottom: 2px solid var(--verde);
+  border-bottom: 2px solid #06294B;
 }
 
 .input-label {
   display: block;
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 5px;
 }
 
@@ -249,7 +248,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   max-width: 300px;
   margin: 30px auto;
   padding: 15px;
-  background: linear-gradient(135deg, var(--verde), #0056b3);
+  background: linear-gradient(135deg, #00C3D7, #0056b3);
   color: white;
   border: none;
   border-radius: 50px;
@@ -257,27 +256,27 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 4px 15px var(--verde);
+  box-shadow: 0 4px 15px #00C3D7;
 }
 
 .boton-probar:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--verdeFuerte);
+  box-shadow: 0 6px 20px #06294B;
 }
 
 /* Caja de Resultado */
 .resultado-box {
   margin-top: 25px;
   padding: 25px;
-  background: #b2ddcd;
-  border: 1px solid var(--verde);
+  background: #ffffff;
+  border: 1px solid #00C3D7;
   border-radius: 15px;
   text-align: center;
   animation: fadeIn 0.5s ease-in-out;
 }
 
 .resultado-box h3 {
-  color: var(--verdeFuerte);
+  color: #06294B;
   margin: 0;
   font-size: 1.4rem;
 }
@@ -292,10 +291,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .tarjeta-colaborador {
   padding: 20px;
   background-color: #ffffff;
-  border: 2px solid var(--verde);
+  border: 2px solid #00C3D7;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px #00C3D7;
   transition: transform 0.3s ease;
 }
 
@@ -304,7 +303,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 }
 
 .nombre-colaborador {
-  color: var(--verdeFuerte);
+  color: #0056b3;
   margin: 0 0 10px 0;
   word-wrap: break-word;
 }
@@ -317,7 +316,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .titulo-principal {
   text-align: center;
-  color: var(--verdeFuerte);
+  color: #00C3D7;
   font-size: 2rem;
   line-height: 1.2;
   margin: 0 auto 30px auto;
@@ -337,10 +336,10 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .contenedor-logos {
   display: flex;
-  flex-direction: row; /* Los pone en fila horizontal */
-  flex-wrap: wrap;     /* Permite que bajen de renglón si no caben */
-  justify-content: center; /* Centra los elementos */
-  gap: 20px;           /* Espacio entre ellos */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .logo-universidad {
@@ -354,7 +353,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 
 .logo-base {
   border-radius: 50%;
-  object-fit: contain; /* Cambiado a contain para que el logo entero quepa en el círculo */
+  object-fit: contain;
 }
 
 .logo-pequeno {
@@ -365,7 +364,7 @@ body { margin: 0; padding: 0; overflow-x: hidden; font-family: sans-serif; }
 .logo-grande {
   width: 175px;
   height: 175px;
-  flex: 0 0 100%;      /* Fuerza al grande a ocupar el 100% de la fila */
+  flex: 0 0 100%;
   text-align: center;
 }
 

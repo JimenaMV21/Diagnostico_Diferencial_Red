@@ -9,14 +9,14 @@ export default function Agradecimientos({ setPagina }) {
       <p className="mensaje-box2" style={{ 
   padding: '20px', 
   borderRadius: '15px', 
-  color: '#6b6b6b',        
+  color: '#ffffff',        
   fontSize: '1.2rem'      
 }}>A continuacion se presentan a las personas que hicieron posible este proyecto.</p>
       <div className="mensaje-box" style={{ 
   padding: '20px', 
-  background: '#e1fff4', 
+  background: '#ffffff', 
   borderRadius: '15px', 
-  color: '#000000',        
+  color: '#06294B',        
   fontSize: '1.3rem'      
 }}>
         <p>Agradecemos a:  

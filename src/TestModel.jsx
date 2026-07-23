@@ -121,12 +121,12 @@ export default function TestModel() {
       </h2>
 
       <div className="mensaje-box3" style={{ 
-        backgroundColor: '#dcffe1', 
+        backgroundColor: '#0056b3', 
         border: '1px solid #e9ecef',
-        borderLeft: '4px solid #93dfa5', 
+        borderLeft: '4px solid #00C3D7', 
         padding: '20px 24px', 
         borderRadius: '12px', 
-        color: '#333333', 
+        color: '#ffffff', 
         fontSize: '0.95rem', 
         maxWidth: '800px', 
         width: '100%', 
@@ -135,7 +135,7 @@ export default function TestModel() {
         boxSizing: 'border-box',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.02)'
       }}>
-        <strong style={{ display: 'block', marginBottom: '10px', fontSize: '1rem', color: '#52b485' }}>
+        <strong style={{ display: 'block', marginBottom: '10px', fontSize: '1rem', color: '#fcfcfc' }}>
             Instructivo:
         </strong>
         <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.6' }}>
@@ -149,7 +149,7 @@ export default function TestModel() {
       <br />
 
       <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '8px', boxSizing: 'border-box', padding: '0 5px' }}>
-        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b', borderBottom: '2px solid #2f7a56', paddingBottom: '8px' }}>
+        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#ffffff', borderBottom: '2px solid #ffffff', paddingBottom: '8px' }}>
           1. Información General y Antecedentes
         </h3>
       </div>
@@ -157,7 +157,7 @@ export default function TestModel() {
       <div style={{ 
         maxWidth: '800px', 
         width: '100%', 
-        background: '#b2ddcd', 
+        background: '#00C3D7', 
         padding: '15px', 
         borderRadius: '15px', 
         border: '1px solid #e2e8f0', 
@@ -239,7 +239,7 @@ export default function TestModel() {
       <br />
 
       <div style={{ maxWidth: '800px', width: '100%', textAlign: 'left', marginBottom: '10px', boxSizing: 'border-box', padding: '0 5px' }}>
-        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#1e293b', borderBottom: '2px solid #2f7a56', paddingBottom: '8px' }}>
+        <h3 style={{ margin: '0', fontSize: '1.1rem', color: '#ffffff', borderBottom: '2px solid #ffffff', paddingBottom: '8px' }}>
           2. Selección de Síntomas
         </h3>
       </div>

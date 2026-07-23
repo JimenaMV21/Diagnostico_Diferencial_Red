@@ -7,8 +7,10 @@ export default function Introduccion() {
 
       <br />
       
-      <div className="texto-introduccion" style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#000000' }}>
+      <div className="texto-introduccion" style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#0056b3',backgroundColor:'#ffffff' }}>
         <p>
+          <br />
+          <br />
           Este proyecto es una aportación a la sociedad. Es una aproximación desde la inteligencia Artificial al Diagnostico diferencial 
           de enfermedades infecciosas mas comunes en diferentes regiones de Mexico. Consideramos que los datos que aporte este programa 
           son de valor siempre y cuándo se considere el criterio del medico tratante.
