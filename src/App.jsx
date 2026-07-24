@@ -34,8 +34,20 @@ function App() {
       {/* Sidebar */}
       <nav className={`sidebar ${abierto ? 'abierto' : ''}`}>
         <button className="btn-cerrar" onClick={() => setAbierto(false)}>&times;</button>
+
+        <div className="sidebar-logo-contenedor">
+          <img 
+            src={Arbodx} 
+            alt="ArboDx - IA Logo" 
+            className="logo-sidebar-recortado"
+          />
+        </div>
+
         <div className="menu-links">
-          {/* Nuevos links añadidos */}
+          {/*links añadidos */}
+
+          <br />
+          <br />
           <a onClick={() => { setPagina('Introduccion'); setAbierto(false); }}>Introducción</a>
           <a onClick={() => { setPagina('Prueba'); setAbierto(false); }}>Diagnóstico diferencial</a>
           <a onClick={() => { setPagina('Colaboradores'); setAbierto(false); }}>Colaboradores</a>
@@ -43,9 +55,7 @@ function App() {
           <a onClick={() => { setPagina('Referencias'); setAbierto(false); }}>Referencias</a>
         </div>
 
-        <div className="sidebar-footer">
-    <img src={Arbodx} alt="ArboDx - IA Logo" className="logo-sidebar" />
-  </div>
+        
       </nav>
 
       {/* Contenido dinámico */}

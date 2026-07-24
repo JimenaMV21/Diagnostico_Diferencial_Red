@@ -86,18 +86,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-footer {
-  padding: 15px;
-  text-align: center;
-  margin-top: auto; /* Empuja el footer siempre hacia el fondo */
+  display: flex;
+  justify-content: flex-start; /* Lo alinea hacia la izquierda como los links */
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 55px;            /* Baja un poco para no estorbar con la 'X' de cerrar */
+  margin-bottom: 10px; /* Empuja el footer siempre hacia el fondo */
 }
 
 .logo-sidebar {
   width: 100%;
-  max-width: 200px; /* Ajusta este valor si la quieres más grande o chica */
+  max-width: 180px;            /* Ajusta el tamaño ideal para que luzca bien */
   height: auto;
   object-fit: contain;
 }
 
+.sidebar-logo-contenedor {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 180px;
+  height: 95px;          /* Aumentamos la altura para que no corte la parte inferior */
+  overflow: hidden;
+}
+
+.logo-sidebar-recortado {
+  width: 100%;           /* Hace que se ajuste automáticamente al ancho del contenedor */
+  height: auto;
+  object-fit: contain;
+}
 .btn-cerrar {
   position: absolute;
   top: 20px;
