@@ -4,6 +4,7 @@ import Agradecimientos from './Agradecimientos';
 import Colaborador from './Colaborador';
 import Introduccion from './Introduccion';
 import Disclaimer from './Disclaimer';
+import Referencias from './Referencias'
 
 // importacion imagenes
 import logoTec from './Imagenes/logo-Tec.jpeg';
@@ -39,6 +40,7 @@ function App() {
           <a onClick={() => { setPagina('Prueba'); setAbierto(false); }}>Diagnóstico diferencial</a>
           <a onClick={() => { setPagina('Colaboradores'); setAbierto(false); }}>Colaboradores</a>
           <a onClick={() => { setPagina('Agradecimientos'); setAbierto(false); }}>Agradecimientos</a>
+          <a onClick={() => { setPagina('Referencias'); setAbierto(false); }}>Referencias</a>
         </div>
 
         <div className="sidebar-footer">
@@ -93,6 +95,9 @@ function App() {
 )}
         
         {pagina === 'Agradecimientos' && <Agradecimientos setPagina={setPagina} />}
+
+        {pagina === 'Referencias' && <Referencias setPagina={setPagina} />}
+
       </main>
 
       <Disclaimer />
