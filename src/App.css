@@ -361,6 +361,70 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 100% 10px 100% !important;
 }
 
+/* --- Botón para abrir el menú (Hamburguesa) --- */
+.boton-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background-color: #06294B;       /* Color acorde a tu paleta institucional */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0.0, 0, 0.15);
+transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, transform 0.2s ease;}
+
+.boton-menu:hover {
+  background-color: #0d4277;       /* Un tono ligeramente más claro al pasar el mouse */
+  transform: scale(1.05);          /* Pequeño efecto de zoom */
+}
+
+.boton-menu:active {
+  transform: scale(0.95);
+}
+
+.boton-menu.oculto {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Evita que se pueda hacer clic accidentalmente mientras está invisible */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* --- Botón para cerrar el menú dentro del Sidebar  --- */
+.btn-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.15); /* Fondo semitransparente elegante */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;             /* Lo hace completamente circular */
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cerrar:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);        /* Animación de giro sutil al pasar el cursor */
+}
+
+.btn-cerrar:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
 /* --- Animación --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

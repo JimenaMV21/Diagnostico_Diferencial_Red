@@ -23,7 +23,12 @@ function App() {
   return (
     <div className="app-container">
       {/* Botón de Menú simple */}
-      <button className="boton-menu" onClick={() => setAbierto(true)}>☰</button>
+      <button 
+  className={`boton-menu ${abierto ? 'oculto' : ''}`} 
+  onClick={() => setAbierto(true)}
+>
+  ☰
+</button>
 
       {/* Sidebar */}
       <nav className={`sidebar ${abierto ? 'abierto' : ''}`}>
